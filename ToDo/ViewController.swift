@@ -11,14 +11,14 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    
     @IBOutlet weak var tableView: UITableView!
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var tasks = [Task]()
+    var tasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +31,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
+        tableView.reloadData()
+    }
 
 }
 

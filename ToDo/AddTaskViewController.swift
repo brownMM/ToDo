@@ -9,16 +9,14 @@
 import UIKit
 
 class AddTaskViewController: UIViewController {
-
     @IBOutlet weak var taskTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
     @IBAction func whenButtonPressed(_ sender: UIButton) {
         
+        navigationController?.popViewController(animated: true)
     }
-    
 }
